@@ -1,8 +1,11 @@
 FILEPATH = 'input.txt'
 
 
-def read_array(filepath):
+def read_array(filepath, line_num=0):
     file = open(filepath, 'r')
+    # skipping lines just in case
+    for i in range(line_num):
+        file.readline()
     line = file.readline()
     array = list(map(int, line.split()))
     return array
@@ -38,6 +41,8 @@ def sum_(array):
 
 
 def multiply(array):
+    if len(array) == 0:
+        return 0
     m = 1
     for item in array:
         m *= item
