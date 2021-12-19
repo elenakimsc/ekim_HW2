@@ -1,3 +1,4 @@
+![Build Status](https://github.com/elenakimsc/ekim_HW3/actions/workflows/run-tests.yml/badge.svg)
 # HW3: Елена Ким
 ## 1. Функции находятся в файле main.py
 ### min_(array) - минимум в последовательности
