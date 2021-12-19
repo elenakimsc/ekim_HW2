@@ -18,7 +18,7 @@ class MyTestCase(unittest.TestCase):
         self.assertEqual(max_([1, 2, 3, 4, 5]), 5)
         self.assertIsNone(max_([]))
         self.assertEqual(max_([1, 1, 1]), 1)
-        self.assertEqual(max_([1, 2, 3, 4, -5]), 1)
+        self.assertEqual(max_([1, 2, 3, 4, -5]), 4)
         rand_arr = [randint(-100, 100), randint(-100, 100), randint(-100, 100)]
         self.assertEqual(max_(rand_arr), max(rand_arr))
 
@@ -31,7 +31,7 @@ class MyTestCase(unittest.TestCase):
     def test_multiply(self):
         self.assertEqual(multiply([1]), 1)
         self.assertEqual(multiply([-1]), -1)
-        self.assertEqual(multiply([], 0))
+        self.assertEqual(multiply([]), 0)
         self.assertEqual(multiply([1, 2, 3, 4, 5]), 120)
         rand_arr = [randint(-100, 100), randint(-100, 100), randint(-100, 100)]
         r_test = rand_arr[0] * rand_arr[1] * rand_arr[2]
