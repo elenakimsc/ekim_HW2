@@ -17,7 +17,7 @@ def read_array(filepath, line_num=0):
 
 def max_(array):
     if len(array) == 0:
-        print('Array must contain elements')
+        print('Array must contain elements! Error, but spotted one! ;-)')
         return None
     m1 = array[0]
     for item in array:
