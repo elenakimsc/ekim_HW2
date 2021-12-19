@@ -1,4 +1,8 @@
+import random
+from time import time
+
 FILEPATH = 'input.txt'
+TOO_MANY_SECONDS_TO_WAIT = 30
 
 
 def read_array(filepath, line_num=0):
@@ -44,8 +48,16 @@ def multiply(array):
     if len(array) == 0:
         return 0
     m = 1
+    start = time()
     for item in array:
+        # preventing "overflow"
         m *= item
+        this_step = time()
+        if this_step - start > TOO_MANY_SECONDS_TO_WAIT:
+            print('Too much time on calculation. Maybe smaller file will do')
+            print('Here is what is calculated now:')
+            print(m)
+            return None
     return m
 
 
@@ -54,4 +66,7 @@ if __name__ == '__main__':
     print(min_(arr))
     print(max_(arr))
     print(sum_(arr))
-    print(multiply(arr))
+    big_random_array = []
+    for i in range(1000000):
+        big_random_array.append(random.randint(1, 200))
+    print(multiply(big_random_array))
