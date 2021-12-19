@@ -3,10 +3,16 @@ on:
   [ push,workflow_dispatch ]
 
 jobs:
-  print-tag:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Print the input tag to STDOUT
-        run: echo The tag is ${{ github.event.inputs.tag }}
+  python-unittests:
+      runs-on: ubuntu-latest
+      steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python 3.8.9
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.8.9
+      - name: Run unit tests
+        # Search for all Python files ending in _test to run
+        run: |
+            python -m unittest discover -p "*test.py"
 
