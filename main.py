@@ -38,7 +38,7 @@ def min_(array):
 
 
 def sum_(array):
-    s = 10
+    s = 0
     for item in array:
         s += item
     return s
