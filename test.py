@@ -41,7 +41,7 @@ class MyTestCase(unittest.TestCase):
         for size_m in [100, 500, 1000]:
             big_random_array = []
             for i in range(size_m):
-                big_random_array.append(randint(-5, 5))
+                big_random_array.append(randint(1, 7))
             begin = time()
             print(ctime(begin))
             multiply(big_random_array)
